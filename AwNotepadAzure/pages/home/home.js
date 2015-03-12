@@ -7,7 +7,7 @@
         ready: function (element, options) {
 
             var log = document.getElementById("btnLogin");
-
+            
             log.addEventListener("click", function() {
 
                 var u = new Modelo.Usuario(undefined, undefined, undefined,
@@ -19,6 +19,14 @@
 
 
             });
+
+            document.getElementById("btnReg").addEventListener("click",
+                function() {
+                    WinJS.Navigation.navigate("/pages/registro/registro.html",
+                        WinJS.Navigation.state);
+
+
+                });
 
         }
     });

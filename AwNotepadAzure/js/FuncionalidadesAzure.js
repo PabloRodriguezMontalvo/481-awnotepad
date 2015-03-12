@@ -34,8 +34,32 @@
         }
     }
 
+    var registro = function(usuario) {
+        var tabla = cliente.getTable("Usuarios");
+        tabla.insert(usuario.toInsert()).done(
+            function(res) {
+
+
+                if (res.id) {
+                    WinJS.Navigation.back(1);
+                    new Windows.UI.Popups.
+                       MessageDialog
+                        ("Usuario creado correctamente, inicia sesion")
+                        .showAsync();
+
+                }
+                else {
+                    new Windows.UI.Popups.
+                        MessageDialog("Error al insertar usuario").showAsync();
+                }
+            }
+        );
+
+
+    };
     WinJS.Namespace.define("Azure", {
-        login:login
+        login: login,
+        registro:registro
 
 
     });

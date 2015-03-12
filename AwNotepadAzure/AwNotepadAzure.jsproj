@@ -73,6 +73,9 @@
     <Content Include="pages\home\home.html" />
     <Content Include="pages\home\home.js" />
     <Content Include="default.html" />
+    <Content Include="pages\registro\registro.css" />
+    <Content Include="pages\registro\registro.html" />
+    <Content Include="pages\registro\registro.js" />
     <None Include="AwNotepadAzure_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
