@@ -9,7 +9,8 @@
     var sched = WinJS.Utilities.Scheduler;
     var ui = WinJS.UI;
 
-  
+
+    
 
     app.addEventListener("activated", function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
@@ -35,6 +36,24 @@
             });
 
             args.setPromise(p);
+
+            if (localStorage.Usuario) {
+                Global.Usuario = JSON.parse(localStorage.Usuario);
+
+                Azure.blocs(Global.Usuario.id).done(function (res) {
+                    Global.Blocs = res;
+                    WinJS.Navigation.navigate("/pages/blocs/blocs.html",
+                      WinJS.Navigation.state);
+
+
+                });
+
+                
+            }
+           
+              
+
+          
         }
     });
 
@@ -44,7 +63,14 @@
         // complete an asynchronous operation before your application is 
         // suspended, call args.setPromise().
         app.sessionState.history = nav.history;
+
+        if (Global.Usuario != null) {
+            localStorage.Usuario = JSON.stringify(Global.Usuario);
+        }
     };
+
+
+
 
     app.start();
 })();

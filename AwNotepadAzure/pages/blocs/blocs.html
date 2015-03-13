@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>blocs</title>
+
+    <link href="blocs.css" rel="stylesheet" />
+    <script src="blocs.js"></script>
+</head>
+<body>
+    <!--Aqui meto los templates que van a ser mostrados-->
+<div id="PlantillaBlocs" data-win-control="WinJS.Binding.Template">
+    <div>
+        <img data-win-bind="alt:nombre; src:img;"/>
+        <h4 data-win-bind="innerText: nombre;"></h4>
+        <h6 data-win-bind="innerText: descripcion;"></h6>
+    </div>
+</div>
+
+
+
+
+<!--Fin de los templates-->
+<div class="blocs fragment">
+    <header class="page-header" aria-label="Header content" role="banner">
+        <!--<button class="back-button" data-win-control="WinJS.UI.BackButton"></button>-->
+        <h1 id="cabecera" class="titlearea win-type-ellipsis">
+            <span class="pagetitle">Welcome to blocs</span>
+            <span class="pagetitle" 
+                      data-win-bind="innerText: nombre;"></span>
+            <span class="pagetitle"
+                      data-win-bind="innerText: apellidos;"></span>
+        </h1>
+    </header>
+    <section class="page-section" aria-label="Main content" role="main">
+        <div id="blocs" data-win-control="WinJS.UI.ListView"
+             data-win-options="{itemDataSource:Datos.Blocs.dataSource,
+             itemTemplate: select('#PlantillaBlocs'), 
+             layout:{type: WinJS.UI.CellSpanningLayout}}"></div>
+    </section>
+</div>
+</body>
+</html>

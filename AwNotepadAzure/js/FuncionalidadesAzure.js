@@ -15,9 +15,20 @@
                     if (res.length > 0) {
                         var d = new Windows.UI.Popups.
                             MessageDialog("Usuario conectado con exito");
+                        localStorage.Usuario = JSON.stringify(res[0]);
+                        Global.Usuario = res[0];
 
                         d.showAsync();
 
+                        GetBlocs(res[0].id).done(function(res) {
+
+                            Global.Blocs = res;
+                            WinJS.Navigation.navigate("/pages/blocs/blocs.html"
+                                ,WinJS.Navigation.state);
+
+                        });
+
+                        
                     } else {
                         var d = new Windows.UI.Popups.
                             MessageDialog("Usuario desconocido");
@@ -57,9 +68,19 @@
 
 
     };
+
+    function GetBlocs(idUsuario) {
+      var tabla=  cliente.getTable("blocs");
+
+        return tabla.where({ idUsuario: idUsuario }).read();
+
+
+    }
+
     WinJS.Namespace.define("Azure", {
         login: login,
-        registro:registro
+        registro: registro,
+        blocs:GetBlocs
 
 
     });
