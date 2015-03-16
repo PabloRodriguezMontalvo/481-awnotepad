@@ -77,10 +77,17 @@
 
     }
 
+    function AddBloc(bloc) {
+        var tabla = cliente.getTable("blocs");
+        return tabla.insert(bloc.toInsert());
+
+    }
+
     WinJS.Namespace.define("Azure", {
         login: login,
         registro: registro,
-        blocs:GetBlocs
+        blocs: GetBlocs,
+        AddBloc:AddBloc
 
 
     });

@@ -9,7 +9,9 @@
     var sched = WinJS.Utilities.Scheduler;
     var ui = WinJS.UI;
 
+    
 
+    
     
 
     app.addEventListener("activated", function (args) {
@@ -51,9 +53,8 @@
                 
             }
            
-              
+            Acciones.appBar();
 
-          
         }
     });
 
@@ -70,7 +71,7 @@
     };
 
 
-
+  
 
     app.start();
 })();

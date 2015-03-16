@@ -18,7 +18,8 @@
             //        Global.Usuario.nombre;
             WinJS.Binding.processAll(document.querySelector("#cabecera"),
                 Global.Usuario);
-          
+            document.getElementById("appbar").winControl.
+                 showOnlyCommands(["cmdAddBloc", "cmdLogout", "cmdDel"]);
 
         },
 

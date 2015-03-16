@@ -21,6 +21,7 @@
                     Azure.registro(us);
 
                 });
+            document.getElementById("appbar").winControl.showOnlyCommands([]);
         },
 
         unload: function () {

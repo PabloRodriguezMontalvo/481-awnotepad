@@ -30,8 +30,9 @@
 
 
                 });
+            document.getElementById("appbar").winControl.
+                showOnlyCommands(["cmdAddUser"]);
 
-           
         }
     });
 })();

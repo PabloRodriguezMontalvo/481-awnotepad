@@ -20,15 +20,27 @@
         return datos;
     }
 
-    /*var Bloc = function(id, nombre, descripcion, img, idUsuario) {
-        this.id=id,
-        this.
+    var Bloc = function(id, nombre, descripcion, img, idUsuario) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.img = img || "http://www.picgifs.com/graphics/t/tux/graphics-tux-850120.gif";
+        this.idUsuario = idUsuario;
 
-    };*/
+        this.toInsert= function() {
+
+            return {
+                nombre: this.nombre,
+                descripcion: this.descripcion,
+                img: this.img,
+                idUsuario: this.idUsuario
+            };
+        }
+    };
 
     WinJS.Namespace.define("Modelo", {
-        Usuario: TipoUsuario
-
+        Usuario: TipoUsuario,
+        Bloc:Bloc
     });
     WinJS.Namespace.define("Global", {
         Usuario: null,
