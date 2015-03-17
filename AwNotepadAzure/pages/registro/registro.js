@@ -22,6 +22,7 @@
 
                 });
             document.getElementById("appbar").winControl.showOnlyCommands([]);
+         
         },
 
         unload: function () {
